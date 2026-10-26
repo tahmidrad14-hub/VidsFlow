@@ -1,0 +1,265 @@
+/* styles/panel.css - Scoped inside Shadow DOM host */
+:host {
+  all: initial;
+}
+
+.viq-panel {
+  position: fixed !important;
+  width: 380px !important;
+  height: 560px !important;
+  min-width: 320px !important;
+  min-height: 260px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #1e1e2e !important;
+  color: #e6e6f0 !important;
+  border: 1px solid #3a3a52 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45) !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  z-index: 2147483647 !important;
+}
+
+.viq-panel.viq-dragging {
+  cursor: grabbing !important;
+}
+
+.viq-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 10px !important;
+  background: #26263a !important;
+  border-bottom: 1px solid #3a3a52 !important;
+  cursor: grab !important;
+  user-select: none !important;
+  flex: 0 0 auto !important;
+}
+
+.viq-title {
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  white-space: nowrap !important;
+}
+
+.viq-spacer { flex: 1 !important; }
+
+.viq-status-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #8a8aa0 !important;
+  display: inline-block !important;
+}
+.viq-status-dot.viq-connected { background: #3ddc84 !important; box-shadow: 0 0 6px #3ddc84 !important; }
+.viq-status-dot.viq-disconnected { background: #ff5252 !important; }
+
+.viq-status-text {
+  font-size: 11px !important;
+  color: #b0b0c8 !important;
+  white-space: nowrap !important;
+}
+
+.viq-icon-btn, .viq-mini-btn {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  color: #c8c8e0 !important;
+  cursor: pointer !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+}
+.viq-icon-btn:hover, .viq-mini-btn:hover {
+  background: #3a3a52 !important;
+  border-color: #4a4a68 !important;
+}
+
+.viq-body {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+  padding: 8px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.viq-section {
+  background: #26263a !important;
+  border: 1px solid #343450 !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.viq-section-title {
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  color: #a8a8ff !important;
+  margin-bottom: 6px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.4px !important;
+}
+
+.viq-prompt-editor {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: #1a1a2a !important;
+  color: #e6e6f0 !important;
+  border: 1px solid #3a3a52 !important;
+  border-radius: 6px !important;
+  padding: 6px !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  resize: vertical !important;
+  min-height: 60px !important;
+}
+
+.viq-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  margin-top: 6px !important;
+}
+
+.viq-btn {
+  background: #3a3a58 !important;
+  color: #e6e6f0 !important;
+  border: 1px solid #4a4a68 !important;
+  border-radius: 6px !important;
+  padding: 5px 9px !important;
+  font-size: 12px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+.viq-btn:hover { background: #4a4a70 !important; }
+.viq-btn.viq-primary { background: #4a5cf0 !important; border-color: #5a6cf0 !important; }
+.viq-btn.viq-primary:hover { background: #5a6cf0 !important; }
+.viq-btn.viq-danger { background: #6a2a3a !important; border-color: #8a3a4a !important; }
+.viq-btn.viq-danger:hover { background: #8a3a4a !important; }
+
+.viq-controls { display: flex !important; flex-wrap: wrap !important; gap: 6px !important; }
+
+.viq-count {
+  margin-top: 6px !important;
+  font-size: 11px !important;
+  color: #b0b0c8 !important;
+}
+
+.viq-prompt-list {
+  margin-top: 6px !important;
+  max-height: 160px !important;
+  overflow-y: auto !important;
+  border-top: 1px solid #343450 !important;
+  padding-top: 4px !important;
+}
+
+.viq-prompt-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 3px 2px !important;
+  border-bottom: 1px solid #2a2a40 !important;
+  font-size: 11px !important;
+}
+.viq-prompt-idx { color: #8a8aa8 !important; min-width: 30px !important; }
+.viq-prompt-state {
+  min-width: 78px !important;
+  font-weight: 600 !important;
+  font-size: 10px !important;
+  padding: 1px 4px !important;
+  border-radius: 3px !important;
+  background: #33334d !important;
+  text-align: center !important;
+}
+.viq-state-pending .viq-prompt-state { color: #b0b0c8 !important; }
+.viq-state-preparing .viq-prompt-state,
+.viq-state-generating .viq-prompt-state,
+.viq-state-verifying .viq-prompt-state { color: #ffd166 !important; }
+.viq-state-completed .viq-prompt-state { color: #3ddc84 !important; }
+.viq-state-failed .viq-prompt-state { color: #ff6b6b !important; }
+.viq-state-paused .viq-prompt-state { color: #ffa94d !important; }
+.viq-prompt-text { flex: 1 !important; color: #d0d0e0 !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+
+.viq-progress-info { display: flex !important; flex-direction: column !important; gap: 5px !important; }
+.viq-current { font-size: 11px !important; color: #d0d0e0 !important; word-break: break-word !important; }
+.viq-progress-bar {
+  height: 8px !important;
+  background: #1a1a2a !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  border: 1px solid #343450 !important;
+}
+.viq-progress-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background: linear-gradient(90deg, #4a5cf0, #3ddc84) !important;
+  transition: width 0.3s !important;
+}
+.viq-stats { font-size: 11px !important; color: #b0b0c8 !important; }
+
+.viq-log {
+  max-height: 140px !important;
+  overflow-y: auto !important;
+  font-family: ui-monospace, "Cascadia Code", Menlo, monospace !important;
+  font-size: 10.5px !important;
+  background: #1a1a2a !important;
+  border-radius: 4px !important;
+  padding: 4px !important;
+  border: 1px solid #343450 !important;
+}
+.viq-log-line { padding: 1px 2px !important; white-space: pre-wrap !important; word-break: break-word !important; }
+.viq-log-info { color: #b8b8d0 !important; }
+.viq-log-ok { color: #7be09a !important; }
+.viq-log-warn { color: #ffcf6b !important; }
+.viq-log-error { color: #ff8080 !important; }
+
+.viq-field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  margin-bottom: 6px !important;
+  font-size: 11px !important;
+  color: #c0c0d8 !important;
+}
+.viq-input {
+  background: #1a1a2a !important;
+  color: #e6e6f0 !important;
+  border: 1px solid #3a3a52 !important;
+  border-radius: 4px !important;
+  padding: 4px 6px !important;
+  font-size: 12px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+.viq-checkbox { transform: scale(1.1) !important; margin-right: 6px !important; }
+
+.viq-resize-handle {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 14px !important;
+  height: 14px !important;
+  cursor: nwse-resize !important;
+  background: linear-gradient(135deg, transparent 50%, #5a5a80 50%) 0 0/6px 6px no-repeat, linear-gradient(135deg, transparent 50%, #5a5a80 50%) 4px 4px/6px 6px no-repeat !important;
+}
+
+.viq-show-tab {
+  background: #4a5cf0 !important;
+  color: #fff !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  font-family: system-ui, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4) !important;
+  user-select: none !important;
+}
+.viq-show-tab:hover { background: #5a6cf0 !important; }
+
+.viq-more { font-size: 11px !important; color: #8a8aa8 !important; padding: 4px !important; text-align: center !important; }

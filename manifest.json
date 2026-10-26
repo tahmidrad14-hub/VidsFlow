@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "VidsFlow — Bulk Image Generator for Google Vids",
+  "short_name": "VidsFlow",
+  "version": "1.1.0",
+  "description": "Automate Google Vids bulk image generation. Batch queue your prompts, auto-click Create, and generate 16:9 images hands-free.",
+  "permissions": [
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/*"
+      ],
+      "js": [
+        "content/storage.js",
+        "content/dom.js",
+        "content/queue.js",
+        "content/floating-ui.js",
+        "content/content.js"
+      ],
+      "css": [
+        "styles/panel.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "VidsFlow",
+    "default_popup": "popup/popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
